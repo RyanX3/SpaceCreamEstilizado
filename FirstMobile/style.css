@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --ff-body: 'Palanquin', sans-serif;
+  --ff-heading: 'Staatliches';
+}
+
+body {
+  font-family: var(--ff-body);
+  --background-main-color: hsl(233, 100%, 97%);
+
+}
+
+header {
+  place-items: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  
+  background: #8E9AAF;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.text {
+  display: none;
+}
+
+.logo {
+  margin-top: 3.8rem;
+  animation: rotate 1.5s infinite;
+}
+
+header h1 {
+  
+  font-size: 4rem;
+  line-height: 3.4rem;
+  text-align: center;
+  font-weight: 400;
+  
+  letter-spacing: 0.005em;
+  color: #FFFFFF;
+  
+  padding: 0.8rem 8.6rem 0.8rem;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  margin: 3.2rem auto 3rem;
+  background: #CBC0D3;
+  width: 100%;
+}
+
+h1, span {
+  font-family: var(--ff-heading);
+  text-transform: uppercase;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-template-columns: auto;
+
+  background: #EFF1FF;
+}
+
+main p {
+  width: 30.5rem;
+  height: 7.5rem;
+  font-size: 1.35rem;
+  line-height: 1.5rem;
+  
+  margin: 1.4rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #23053A;
+
+   margin-bottom: 6.3rem ;
+}
+
+.cards {
+  align-items: center;
+  display: grid;
+  gap: 3.2rem;
+}
+
+.card img {
+  height: fit-content;
+  border-radius: 20px;
+  transition: 200ms;
+  animation: down 700ms;
+}
+
+.cards .card {
+  position: relative;
+}
+
+.cards .card span {
+  position: absolute;
+  background: #FEEAFA;
+  border-radius: 20px;
+  
+  top: 1.6rem;
+  right: 1.6rem; 
+  padding: 0.1rem 2.4rem;
+  
+  font-size: 2rem;
+  line-height: 3.4rem;
+  
+  letter-spacing: 0.10em;
+  color: #4A4E69;
+  
+  animation: top 700ms;
+}
+
+.cards .card img:hover {
+  transform: scale(1.1);
+  transition: 300ms;
+}
+
+.cards .card:nth-child(3) {
+  display: none;
+}
+
+.cards .card:nth-child(4) {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+@keyframes top {
+
+  0% {
+  transform: translateY(-75px);
+   }
+
+  100% {
+    transform: translateY(0px);
+   }
+}
+
+@keyframes down {
+  100% {
+    transform: translateY(0px);
+}
+
+  0% {
+      transform: translateY(75px);
+}
+  }
+
+  @keyframes rotate {
+  50% {
+      transform: translateY(-10%);
+}
+}
+
+@media (min-width: 900px) {
+  
+body {
+
+  overflow:hidden
+}
+
+  .container {
+    display: flex;
+    width: 128rem;
+    min-height: 100vh;
+  }
+  
+  header {
+    width: 37.7rem;
+    height: 100%;
+    position: fixed;
+  }
+
+.title h1 {
+    padding: 2rem auto;
+  }
+  
+  header .text {
+    
+    font-family: 'Roboto';
+    width: 26rem;
+    height: 26.2rem;
+    
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 400;
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+  }
+
+  main p, span {
+    display: none;
+  }
+  
+  main {
+    height: 100%;
+    background: #FFFFFF;
+  }
+
+  .cards {
+    margin-left: 37.7rem;
+  }
+
+  .cards {
+    padding: 8.4rem 8.1rem 12.4rem 9.8rem;
+    display: grid;
+    grid-template-areas: 
+    'A B'
+    'C B'
+    'C D'
+    'E F';
+  }
+  
+  .cards .card:nth-child(1) {
+  grid-area: A;
+  }
+  
+  .cards .card:nth-child(2) {
+  grid-area: B;
+  }
+  
+  .cards .card:nth-child(3) {
+  grid-area: D;
+  display: block;
+  }
+  
+  .cards .card:nth-child(4) {
+  grid-area: C;
+  display: block;
+  }
+  
+  .cards .card:nth-child(5) {
+  grid-area: E;
+  align-self: flex-start;
+  }
+  
+  .cards .card:nth-child(6) {
+    grid-area: F;
+  }
+
+
+  main footer p {
+    
+    position: relative;
+    width: 59.2rem;
+    
+    display: block;
+    bottom: 7.5rem;
+    left: 20rem;
+  }
+  
+  footer p, a {
+  color: #4A4E69;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  footer {
+    display: block;
+  }
+
+  .cards {
+    padding: 8.4rem 8.1rem 12.4rem 9.8rem;
+    display: grid;
+    grid-template-areas: 
+    'A B C'
+    'D B E'
+    'D F E';
+  }
+  
+  .cards .card:nth-child(1) {
+   display: grid;
+  grid-area: A;
+  }
+  
+  .cards .card:nth-child(2) {
+  grid-area: B;
+  }
+  
+  .cards .card:nth-child(3) {
+  grid-area: C;
+  display: block;
+  }
+  
+  .cards .card:nth-child(4) {
+  grid-area: D;
+  display: block;
+  }
+  
+  .cards .card:nth-child(5) {
+  grid-area: F;
+  }
+  
+  .cards .card:nth-child(6) {
+    grid-area: E;
+  }
+}
